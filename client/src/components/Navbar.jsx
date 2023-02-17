@@ -12,13 +12,13 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className='inline-block py-4'>
-                    <Link to="/about" className='p1-6 pr-8'>
-                        About
+                    <Link to="/articles-list" className='p1-6 pr-8'>
+                        Articles
                     </Link>
                 </li>
                 <li className='inline-block py-4'>
-                    <Link to="/articles-list" className='p1-6 pr-8'>
-                        Articles
+                    <Link to="/about" className='p1-6 pr-8'>
+                        About
                     </Link>
                 </li>
             </ul>
