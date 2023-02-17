@@ -1,11 +1,19 @@
 {
-  "name": "MERN_blog",
+  "name": "mern_blog",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "author": "AmitxParmar <amitparmar901@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "server": "nodemon server",
+    "client": "yarn run dev --prefix client",
+    "start": "concurrently \"yarn run server\" \"yarn run client\""
+  },
   "dependencies": {
     "express": "^4.18.2",
     "mongodb": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }
