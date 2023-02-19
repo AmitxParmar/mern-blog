@@ -8,7 +8,7 @@ const Articles = ({ articles }) => {
             {articles.map((article, index) => (
                 <div key={index} className=''>
                     <div className=''>
-                        <Link to={`/articles/${article.name}`}>
+                        <Link to={`/article/${article.name}`}>
                             <img
                                 className=''
                                 src={article.thumbnail}

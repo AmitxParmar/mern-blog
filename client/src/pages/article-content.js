@@ -1,4 +1,4 @@
-const articles = [
+const articleContent = [
     {
         name: "learn-react",
         title: "The Fastest Way to Learn React",
@@ -30,4 +30,4 @@ const articles = [
         ],
     },
 ];
-export default articles;
+export default articleContent;

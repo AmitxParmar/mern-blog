@@ -10,7 +10,7 @@ import Articles from '../components/Articles';
 import CommentList from '../components/CommentList';
 import AddCommentForm from './../components/AddCommentForm';
 
-const Article = ({ article }) => {
+const Article = () => {
     const { name } = useParams();
     const article = articleContent.find((article) => article.name === name);
     const [articleInfo, setArticleInfo] = useState({ comments: [] });
@@ -21,16 +21,17 @@ const Article = ({ article }) => {
             const body = await result.json();
             console.log(body);
             setArticleInfo(body);
-        }
+        };
         fetchData();
     }, [name]);
 
     // if there are no articles available return NotFound Page
     if (!article) return <NotFound />;
     // if there are no articles available in database use the local demo articles
+
     const otherArticles = articleContent.filter(
         (article) => article.name !== name
-    );
+    )
 
     return (
         <>
@@ -38,12 +39,12 @@ const Article = ({ article }) => {
                 {article.title}
             </h1>
             {article.content.map((paragraph, index) => (
-                <p key={index} className=''>
+                <p key={index} className='' >
                     {paragraph}
                 </p>
             ))}
-            <CommentList />
-            <AddCommentForm />
+            <CommentList comments={articleInfo.comments} />
+            <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
             <h1 className='sm:text-2xl text-xl'>
                 Other Articles
             </h1>

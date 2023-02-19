@@ -8,7 +8,6 @@ const AddCommentForm = ({ articleName, setArticleInfo }) => {
         // empty for now
     }
 
-
     return (
         <form>
             <h3>Add a comment</h3>
