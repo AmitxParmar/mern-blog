@@ -5,9 +5,7 @@
   "author": "AmitxParmar <amitparmar901@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "server": "nodemon server",
-    "client": "yarn run dev --prefix client",
-    "start": "concurrently \"yarn run server\" \"yarn run client\""
+    "server": "nodemon server"
   },
   "dependencies": {
     "express": "^4.18.2",

@@ -31,5 +31,6 @@ const Article = ({ article }) => {
             </div>
         </>
     )
-
 }
+
+export default Article;
