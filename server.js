@@ -16,7 +16,7 @@ const withDB = async (operations, res) => {
         await operations(db);
         client.close();
     } catch (error) {
-        res.status(500).json({ message: "Error coneecting to database", error })
+        res.status(500).json({ message: "Error connecting to database", error })
     }
 };
 

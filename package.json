@@ -5,9 +5,9 @@
   "author": "AmitxParmar <amitparmar901@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "server": "nodemon server.js --ignore 'client/`",
-    "client": "yarn run dev --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev:server": "nodemon server.js",
+    "dev:client": "npm run dev --prefix ./client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "build": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
