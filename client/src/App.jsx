@@ -1,10 +1,12 @@
 import { lazy, suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import NotFound from './pages/NotFound'
-import Article from './pages/Article'
-import ArticlesList from './pages/ArticlesList'
-import About from './pages/About';
+
+// pages
+const Home = lazy(() =>) './pages/Home'
+const NotFound = lazy(() =>) './pages/NotFound'
+const Article = lazy(() =>) './pages/Article'
+const ArticlesList = lazy(() =>) './pages/ArticlesList'
+const About = lazy(() =>) './pages/About';
 
 // component
 import Navbar from './components/Navbar'
