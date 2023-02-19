@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import articleContent from './article-content'
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import articleContent from "./article-content";
 
-// pages
-import NotFound from './NotFound'
+// Pages
+import NotFound from "./NotFound";
 
 // Components
-import Articles from '../components/Articles';
-import CommentList from '../components/CommentList';
-import AddCommentForm from './../components/AddCommentForm';
+import Articles from "../components/Articles";
+import CommentsList from "../components/CommentsList";
+import AddCommentForm from "../components/AddCommentForm";
 
 const Article = () => {
     const { name } = useParams();
@@ -25,34 +25,30 @@ const Article = () => {
         fetchData();
     }, [name]);
 
-    // if there are no articles available return NotFound Page
     if (!article) return <NotFound />;
-    // if there are no articles available in database use the local demo articles
-
     const otherArticles = articleContent.filter(
         (article) => article.name !== name
-    )
-
+    );
     return (
         <>
             <h1 className='sm:text-4xl text-2xl font-bold my-6 text-gray-900'>
                 {article.title}
             </h1>
             {article.content.map((paragraph, index) => (
-                <p key={index} className='' >
+                <p className='mx-auto leading-relaxed text-base mb-4' key={index}>
                     {paragraph}
                 </p>
             ))}
-            <CommentList comments={articleInfo.comments} />
+            <CommentsList comments={articleInfo.comments} />
             <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
-            <h1 className='sm:text-2xl text-xl'>
+            <h1 className='sm:text-2xl text-xl font-bold my-4 text-gray-900'>
                 Other Articles
             </h1>
-            <div className=''>
+            <div className='flex flex-wrap -m-4'>
                 <Articles articles={otherArticles} />
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Article;
