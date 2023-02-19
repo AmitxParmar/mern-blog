@@ -8,24 +8,27 @@ const Article = lazy(() => import('./pages/Article'))
 const ArticlesList = lazy(() => import('./pages/ArticlesList'))
 const About = lazy(() => import('./pages/About'));
 
-// component
+// components
 import Navbar from './components/Navbar'
 
 function App() {
   return (
     <Router>
       <Navbar />
+      {/*  Fallback passed to Suspense Component runs when the components inside Routes component are loading or you may call it data fetching */}
       <Suspense className='container bg-transparent blur-sm flex flex-center justify-center absolute' fallback='Loading....'>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/article-list" element={<ArticlesList />} />
-          <Route path="/articles/:name" element={<Article />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className='max-w-screen-md mx-auto pt-20'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/article-list" element={<ArticlesList />} />
+            <Route path="/articles/:name" element={<Article />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </Suspense>
     </Router>
-  )
+  );
 }
 
 export default App
